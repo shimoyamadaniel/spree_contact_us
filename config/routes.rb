@@ -1,3 +1,8 @@
 Spree::Core::Engine.routes.draw do
-  # Add your extension routes here
+
+
+	resources :inquiries, only: [:new, :create]
+	
+	match '/contact' => 'inquiries#new', :as => :contact
+
 end

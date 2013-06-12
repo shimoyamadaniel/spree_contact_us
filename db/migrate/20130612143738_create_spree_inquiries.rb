@@ -1,7 +1,7 @@
-class CreateInquiries < ActiveRecord::Migration
+class CreateSpreeInquiries < ActiveRecord::Migration
 	
 	def change
-    create_table :inquiries do |t|
+    create_table :spree_inquiries do |t|
 			t.string :first_name, :limit => 50
 			t.string :last_name, :limit => 50
 			t.string :email, :limit => 50
