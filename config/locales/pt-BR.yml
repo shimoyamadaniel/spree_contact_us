@@ -1,3 +1,24 @@
 pt-BR:
   spree:
+    contacts: "Contatos"
     contact_us: "Contato"
+    first_name: "Nome"
+    last_name: "Sobrenome"
+    email: "Email"
+    phone_number: "Telefone"
+    mobilephone_number: "Celular"
+    subject: "Assunto"
+    message: "Mensagem"
+    send_contact: "Enviar"
+    listing_inquiries: "Listando Contatos"
+  activerecord:
+    attributes:
+      spree/inquiry:
+        first_name: "Nome"
+        last_name: "Sobrenome"
+        email: "Email"
+        phone_number: "Telefone"
+        mobilephone_number: "Celular"
+        subject: "Assunto"
+        message: "Mensagem"
+        

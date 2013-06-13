@@ -1,0 +1,85 @@
+<% content_for :page_title do %>
+    <%= Spree.t(:listing_inquiries) %>
+<% end %>
+
+			
+<% content_for :page_actions do %>
+<!--
+	<li id="new_newsletter_subscriber_link">
+		<%= button_link_to Spree.t(:new_newsletter_subscriber), new_object_url, { :icon => 'icon-plus', :id => 'admin_new_newsletter_subscriber' } %>
+	</li>
+-->
+<% end %>
+
+<% content_for :table_filter_title do %>
+  <%= Spree.t(:search) %>
+<% end %>
+
+<% content_for :table_filter do %>
+  <div data-hook="admin_inquiries_sidebar">
+
+    <%= search_form_for [:admin, @search] do |f| %>
+
+        <%- locals = {:f => f} %>
+
+        <div data-hook="admin_inquiries_index_search">
+          <div class="alpha nine columns">
+            <div class="field">
+              <%= f.label :email_cont, Spree.t(:email) %>
+              <%= f.text_field :email_cont, :size => 15 %>
+            </div>
+          </div>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="form-buttons actions filter-actions" data-hook="admin_inquiries_index_search_buttons">
+          <%= button Spree.t(:search), 'icon-search' %>
+        </div>
+    <% end %>
+  </div>
+<% end %>
+
+
+<div id="new_product_wrapper" data-hook></div>
+
+<%= paginate @inquiries %>
+
+<% if @inquiries.any? %>
+  <table class="index" id="listing_inquiries">
+    <colgroup>
+       <col style="width: 20%;">
+			 <col style="width: 30%;">
+			 <col style="width: 30%;">
+       <col style="width: 20%;">
+    </colgroup>
+    <thead>
+      <tr data-hook="admin_inquiries_index_headers">
+				<th><%= Spree.t(:first_name) %></th>        
+				<th><%= Spree.t(:subject) %></th>
+				<th><%= Spree.t(:email) %></th>
+        <th data-hook="admin_inquiries_index_header_actions" class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @inquiries.each do |inquiry| %>
+          <tr id="<%= spree_dom_id inquiry %>" data-hook="admin_inquiries_index_rows" class="<%= cycle('odd', 'even') %>">
+						<td class="align-center"><%= "#{inquiry.first_name} #{inquiry.last_name}" rescue '' %></td>
+					 	<td class="align-center"><%= inquiry.subject rescue '' %></td>
+            <td class="align-center"><%= inquiry.email rescue '' %></td>
+            <td class="actions" data-hook="admin_inquiries_index_row_actions">
+							<%= link_to_edit inquiry, :no_text => true, :class => 'edit' %>
+              &nbsp;
+              <%= link_to_delete inquiry, :no_text => true %>
+            </td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="no-objects-found">
+    <%= Spree.t(:no_results) %>
+  </div>
+<% end %>
+
+<%= paginate @inquiries %>

@@ -21,6 +21,10 @@
           <%= f.label :mobilephone_number, Spree.t(:mobilephone_number) %><br/>
           <%= f.text_field :mobilephone_number %>
       </p>
+		  <p>
+          <%= f.label :subject, Spree.t(:subject) %> <span class="required">*</span><br/>
+          <%= f.text_field :subject %>
+      </p>
       <p>
           <%= f.label :message, Spree.t(:message) %> <span class="required">*</span><br/>
           <%= f.text_area :message, { :cols => 60, :rows => 4, :class => 'fullwidth' } %>
