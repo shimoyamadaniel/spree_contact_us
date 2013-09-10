@@ -55,7 +55,7 @@
     </colgroup>
     <thead>
       <tr data-hook="admin_inquiries_index_headers">
-				<th><%= Spree.t(:first_name) %></th>        
+				<th><%= Spree.t(:full_name) %></th>        
 				<th><%= Spree.t(:subject) %></th>
 				<th><%= Spree.t(:email) %></th>
         <th data-hook="admin_inquiries_index_header_actions" class="actions"></th>
@@ -64,7 +64,7 @@
     <tbody>
       <% @inquiries.each do |inquiry| %>
           <tr id="<%= spree_dom_id inquiry %>" data-hook="admin_inquiries_index_rows" class="<%= cycle('odd', 'even') %>">
-						<td class="align-center"><%= "#{inquiry.first_name} #{inquiry.last_name}" rescue '' %></td>
+						<td class="align-center"><%= inquiry.full_name rescue '' %></td>
 					 	<td class="align-center"><%= inquiry.subject rescue '' %></td>
             <td class="align-center"><%= inquiry.email rescue '' %></td>
             <td class="actions" data-hook="admin_inquiries_index_row_actions">

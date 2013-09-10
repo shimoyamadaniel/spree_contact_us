@@ -1,9 +1,12 @@
 module Spree
 
 	class Inquiry < ActiveRecord::Base
-		attr_accessible :first_name, :last_name, :email, :phone_number, :mobilephone_number, :subject, :message
+	
+    has_enumeration_for :inquiry_type, :with => InquiryType, :create_helpers => true
+	
+		attr_accessible :full_name, :email, :phone_number, :mobilephone_number, :subject, :message
 
-		validates :first_name, :last_name, :email, :phone_number, :subject, :message, presence: true
+		validates :full_name, :email, :phone_number, :subject, :message, presence: true
 	
 	end
 

@@ -1,0 +1,6 @@
+en:
+  enumerations:
+    inquiry_type:
+      INFORMATION: "Information"
+      REFUND: "Refund"
+      OTHER_INFORMATIONS: "Other_informations"
