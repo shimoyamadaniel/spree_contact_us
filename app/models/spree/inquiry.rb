@@ -6,7 +6,7 @@ module Spree
 	
 		attr_accessible :full_name, :email, :phone_number, :mobilephone_number, :message, :inquiry_type
 
-		validates :full_name, :email, :phone_number, :subject, :message, :inquiry_type, presence: true
+		validates :full_name, :email, :phone_number, :mobilephone_number, :message, :inquiry_type, presence: true
 	
 	end
 

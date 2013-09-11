@@ -1,4 +1,11 @@
 pt-BR:
+  enumerations:
+    inquiry_type:
+      other_informations: "Outras informações"
+      informations: "Informações - troca, devoluções ou cancelamento"
+      aproval: "Aprovação do pedido"
+      refund: "Reembolso"
+      tips: "Dicas e sugestões"
   spree:
     contacts: "Contatos"
     contact_us: "Contato"
@@ -10,6 +17,7 @@ pt-BR:
     message: "Mensagem"
     send_contact: "Enviar"
     listing_inquiries: "Listando Contatos"
+    inquiry_type: "Assunto"
   activerecord:
     attributes:
       spree/inquiry:

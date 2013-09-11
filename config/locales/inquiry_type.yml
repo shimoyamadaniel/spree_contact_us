@@ -1,6 +1,8 @@
 en:
   enumerations:
     inquiry_type:
-      INFORMATION: "Information"
+      INFORMATIONS: "Informations"
       REFUND: "Refund"
       OTHER_INFORMATIONS: "Other_informations"
+      APROVAL: "Aproval"
+      TIPS: "Tips"
