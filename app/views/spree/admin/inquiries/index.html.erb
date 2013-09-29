@@ -65,7 +65,7 @@
       <% @inquiries.each do |inquiry| %>
           <tr id="<%= spree_dom_id inquiry %>" data-hook="admin_inquiries_index_rows" class="<%= cycle('odd', 'even') %>">
 						<td class="align-center"><%= inquiry.full_name rescue '' %></td>
-					 	<td class="align-center"><%= inquiry.inquiry_type rescue '' %></td>
+					 	<td class="align-center"><%= inquiry.inquiry_type_humanize rescue '' %></td>
             <td class="align-center"><%= inquiry.email rescue '' %></td>
             <td class="actions" data-hook="admin_inquiries_index_row_actions">
 							<%= link_to_edit inquiry, :no_text => true, :class => 'edit' %>
