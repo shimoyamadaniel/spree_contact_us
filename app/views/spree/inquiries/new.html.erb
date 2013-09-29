@@ -2,6 +2,10 @@
 	<%= render 'spree/shared/error_messages', :target => @inquiry %>
   <%= form_for(@inquiry, :url => create_contact_url) do |f| %>
       <p>
+          <%= f.label :inquiry_type, Spree.t(:inquiry_type) %><span class="required">*</span><br/>
+          <%= f.select :inquiry_type, InquiryType.to_a %>
+      </p>
+      <p>
           <%= f.label :full_name, Spree.t(:full_name) %><span class="required">*</span><br/>
           <%= f.text_field :full_name %>
       </p>
